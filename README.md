@@ -1,3 +1,5 @@
+# Azure DevOps self-hosted agent for kubernetes, running alongside with DinD
+
 ## Before installation
 
 Make sure that you are running on the host machine in order to be able azure agent work and share properly with internal directories like `workingDirectory` and so on.
@@ -114,14 +116,16 @@ securityContext: {}
 
 ## Installing the Chart
 
+### First you need to add repository _(if you haven't done yet before)_
 
-1. First you need to add repository _(if you haven't done yet before)_
 ```bash
 helm repo add hakob https://hakob.github.io
 ```
 
-2. Install the helm chart with required parameters
-  - With bash:
+### Install the helm chart with required parameters
+
+- With bash:
+
 ```bash
 helm install {RELEASE-NAME} hakob/azure-devops-agent \
   --set agent.pat={PAT} \
@@ -129,7 +133,8 @@ helm install {RELEASE-NAME} hakob/azure-devops-agent \
   --namespace {YOUR-NS}
 ```
 
-  - With powershell:
+- With powershell:
+
 ```powershell
 helm install {RELEASE-NAME} hakob/azure-devops-agent `
   --set agent.pat={PAT} `
@@ -140,6 +145,7 @@ helm install {RELEASE-NAME} hakob/azure-devops-agent `
 ## Uninstalling the Chart
 
 Run the following snippet to uninstall the release:
+
 ```bash
 helm delete {RELEASE-NAME}
 ```
@@ -156,12 +162,11 @@ helm delete {RELEASE-NAME}
 | `agent.patSecret`    | (2nd Option) Already existing secret name that stores PAT         | `""`    |
 | `agent.patSecretKey` | (2nd Option) Key (field) name of the PAT that is stored in secret | `"pat"` |
 
-
 ### Agent configuration parameters
 
 | Name                     | Description                                                                   | Value       |
 | ------------------------ | ----------------------------------------------------------------------------- | ----------- |
-| `agent.organizationUrl`  | Server / organization url, e.g.: https://dev.azure.com/your-organization-name | `""`        |
+| `agent.organizationUrl`  | Server / organization url, e.g.: <https://dev.azure.com/your-organization-name> | `""`        |
 | `agent.pool`             | Agent pool name which the build agent is placed into                          | `"Default"` |
 | `agent.workingDirectory` | Working directory of the agent                                                | `"_work"`   |
 | `agent.extraEnv`         | Additional environment variables as dictionary                                | `{}`        |
@@ -171,7 +176,7 @@ helm delete {RELEASE-NAME}
 | Name                        | Description                                                   | Value                 |
 | --------------------------- | ------------------------------------------------------------- | --------------------- |
 | `image.repository`          | Azure DevOps agent image repository                           | `hakob/azp-k8s-agent` |
-| `image.tag`                 | Azure DevOps agent image tag (immutable tags are recommended) | `3.232.3`             |
+| `image.tag`                 | Azure DevOps agent image tag (immutable tags are recommended) | `20240403.1`             |
 | `image.pullPolicy`          | Azure DevOps agent image pull policy                          | `IfNotPresent`        |
 | `image.pullSecrets`         | Azure DevOps agent image pull secrets                         | `[]`                  |
 | `replicaCount`              | Replica count for deployment                                  | `1`                   |
@@ -185,7 +190,9 @@ helm delete {RELEASE-NAME}
 Please refer the values.yaml for other parameters.
 
 ## Built-in binaries & packages
+
 The binaries and packages listed below are included in the docker image used by the helm chart:
+
 - Ubuntu 22.04
 - unzip
 - jq

@@ -119,7 +119,7 @@ securityContext: {}
 ### First you need to add repository _(if you haven't done yet before)_
 
 ```bash
-helm repo add hakob https://hakob.github.io
+helm repo add azp-k8s-agent https://hakob.github.io/azp-k8s-agent
 ```
 
 ### Install the helm chart with required parameters

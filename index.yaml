@@ -3,7 +3,7 @@ entries:
   azp-k8s-agent:
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2024-05-05T10:40:52.244551+04:00"
+    created: "2024-05-05T10:53:42.478699+04:00"
     description: Azure Pipelines agent running Docker-in-Docker in K8S
     digest: 546de477a7807cd65a7cc30e4eb876ae1e6349e01c84aefcb2512fb6d106b804
     keywords:
@@ -13,6 +13,6 @@ entries:
     name: azp-k8s-agent
     type: application
     urls:
-    - azp-k8s-agent-1.1.0.tgz
+    - https://hakob.github.com/azp-k8s-agent/azp-k8s-agent-1.1.0.tgz
     version: 1.1.0
-generated: "2024-05-05T10:40:52.243859+04:00"
+generated: "2024-05-05T10:53:42.477977+04:00"

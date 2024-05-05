@@ -13,6 +13,6 @@ entries:
     name: azp-k8s-agent
     type: application
     urls:
-    - https://hakob.github.com/azp-k8s-agent/azp-k8s-agent-1.1.0.tgz
+    - https://hakob.github.io/azp-k8s-agent/azp-k8s-agent-1.1.0.tgz
     version: 1.1.0
 generated: "2024-05-05T10:53:42.477977+04:00"
